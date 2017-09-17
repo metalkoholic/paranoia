@@ -152,15 +152,11 @@ module Paranoia
   private
 
   def paranoia_restore_attributes
-    {
-      paranoia_column => paranoia_sentinel_value
-    }
+    {paranoia_column: 0}
   end
 
   def paranoia_destroy_attributes
-    {
-      paranoia_column => current_time_from_proper_timezone
-    }
+    {paranoia_column: 1}
   end
 
   # restore associated records that have been soft deleted when
