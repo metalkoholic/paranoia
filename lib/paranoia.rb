@@ -210,7 +210,7 @@ class ActiveRecord::Base
     include Paranoia
     class_attribute :paranoia_column, :paranoia_sentinel_value
 
-    self.paranoia_column = (options[:column] || :deleted_at).to_s
+    self.paranoia_column = (options[:column] || :soft_delete).to_s
     self.paranoia_sentinel_value = options.fetch(:sentinel_value) { Paranoia.default_sentinel_value }
     def self.paranoia_scope
       where(paranoia_column => paranoia_sentinel_value)
