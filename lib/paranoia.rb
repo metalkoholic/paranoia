@@ -1,7 +1,7 @@
 require 'active_record' unless defined? ActiveRecord
 
 module Paranoia
-  @@default_sentinel_value = nil
+  @@default_sentinel_value = 0
 
   # Change default_sentinel_value in a rails initializer
   def self.default_sentinel_value=(val)
